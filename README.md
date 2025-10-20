@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 ## Run CLI
 ```bash
-python -m market_data.cli.client --symbols AAPL
+python -m market_data.cli.client --symbols AAPL TSLA
 ```
 
 ## Example output
