@@ -6,8 +6,6 @@ A Python CLI tool to fetch real-time stock prices asynchronously using Finnhub. 
 
 - Fetch multiple stock symbols asynchronously.  
 - Display current price, change, percent change, high, low, open, and previous close.  
-- Supports Finnhub **secret key** authentication.  
-- Optional caching to reduce API calls.  
 
 ## Requirements
 
