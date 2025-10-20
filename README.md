@@ -12,16 +12,14 @@ A Python CLI tool to fetch real-time stock prices asynchronously using Finnhub. 
 ## Requirements
 
 - Python 3.10+  
-- aiohttp  
-- pydantic  
 
-Install dependencies:
+## Install requirements:
 
 ```bash
-pip install aiohttp pydantic
+pip install -r requirements.txt
 ```
 
-## Requirements
+## Run CLI
 ```bash
 python -m market_data.cli.client --symbols AAPL
 ```
