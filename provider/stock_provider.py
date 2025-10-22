@@ -18,21 +18,15 @@ class StockProvider(Provider):
             "symbol": symbol,
         }
         if symbol in cache:
-            return self._format_data(cache[symbol])
+            return str(Stock(**cache[symbol]))
 
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(self.url, params=params) as response:
                     data = await response.json()
                     cache[symbol] = data
-                    return self._format_data(data)            
+                    return str(Stock(**data))        
         except aiohttp.ClientError as e:
             return f"Network error for {symbol}: {str(e)}"
         except Exception as e:
             return f"Unexpected error for {symbol}: {str(e)}"
-
-    def _format_data(self, stock_data: dict) -> str:
-        """
-        Convert stock data dict into a formatted string.
-        """
-        return str(Stock(**stock_data))
