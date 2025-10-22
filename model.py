@@ -16,9 +16,9 @@ class Stock(BaseModel):
         return (
             f"Current Price: {self.current_price}\n"
             f"Change: {self.change} ({self.percentage_change}%)\n"
-            f"High: {self.high_price}\n"
-            f"Low: {self.low_price}\n"
-            f"Open: {self.open_price}\n"
+            f"High Price: {self.high_price}\n"
+            f"Low Price: {self.low_price}\n"
+            f"Open Price: {self.open_price}\n"
             f"Previous Close Price: {self.previous_close_price}\n"
             + "-"*30
         )
