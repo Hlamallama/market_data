@@ -8,13 +8,13 @@ async def test_fetch_data_success():
     cache.clear()
 
     mock_response = {
-        "c": 247.01,
-        "d": -2.33,
-        "dp": -0.9345,
-        "h": 250.18,
-        "l": 245.13,
-        "o": 250.18,
-        "pc": 249.34,
+        "current_price": 247.01,
+        "change": -2.33,
+        "percentage_change": -0.9345,
+        "high_price": 250.18,
+        "low_price": 245.13,
+        "open_price": 250.18,
+        "previous_close_price": 249.34,
     }
 
     mock_response_cm = AsyncMock()
@@ -28,7 +28,7 @@ async def test_fetch_data_success():
     with patch("market_data.provider.stock_provider.aiohttp.ClientSession", return_value=mock_session_cm):
         result = await provider.fetch_data("AAPL")
 
-    assert "Current: 247.01" in result
+    assert "Current Price: 247.01" in result
     assert "Change: -2.33 (-0.9345%)" in result
 
 

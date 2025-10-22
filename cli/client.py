@@ -1,6 +1,11 @@
 import asyncio
 import argparse
+import logging
 from market_data.provider.stock_provider import StockProvider
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s')
 
 async def main():
     parser = argparse.ArgumentParser(description="Stock CLI")
@@ -12,7 +17,7 @@ async def main():
     results = await asyncio.gather(*tasks)
 
     output = "\n".join(results)
-    print(output)
+    logging.info("Stocks\n%s", output)
 
 if __name__ == "__main__":
     asyncio.run(main())

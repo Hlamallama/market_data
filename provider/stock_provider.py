@@ -35,13 +35,4 @@ class StockProvider(Provider):
         """
         Convert stock data dict into a formatted string.
         """
-        stock = Stock(**stock_data)
-        return (
-            f"Current: {stock.c}\n"
-            f"Change: {stock.d} ({stock.dp}%)\n"
-            f"High: {stock.h}\n"
-            f"Low: {stock.l}\n"
-            f"Open: {stock.o}\n"
-            f"Previous Close: {stock.pc}\n"
-            + "-"*30
-        )
+        return str(Stock(**stock_data))
